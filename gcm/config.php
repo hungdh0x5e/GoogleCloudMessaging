@@ -11,5 +11,5 @@ define("GCM_TABLE_NAME",'gcm_users');
 /*
  * Google API Key
  */
-define("GOOGLE_API_KEY", "AIzaSyA7mqQe5U9Yx5ScAPiEbDDEpDpJ6kViqJE"); 
+define("GOOGLE_API_KEY", "AIzaSyAt2RCG5pRgdeV-hrLtRSxHoatIknAE674"); 
 ?>

@@ -17,21 +17,15 @@ if (isset($postvars["name"]) && isset($postvars["email"]) && isset($postvars["re
 
     $db = new DB_Functions();
     // $gcm = new GCM();
-    if($db->isTokenExisted($gcm_regid)){
+    $res = $db->storeUser($name, $email, $gcm_regid);
+    if($res){
+        $response["status"] = "ok";
+        $response["message"] = "Register success!";
+        echo json_encode($response);
+    }else{
         $response["status"] = "false";
         $response["error"] = "Registration token is existed!";
         echo json_encode($response);
-    }else{
-        $res = $db->storeUser($name, $email, $gcm_regid);
-            if($res){
-                $response["status"] = "ok";
-                $response["message"] = "Register success!";
-                echo json_encode($response);
-            }else{
-                $response["status"] = "false";
-                $response["error"] = "Registration token is existed!";
-                echo json_encode($response);
-            }
     }
 } else {
     $response["status"] = "false";
